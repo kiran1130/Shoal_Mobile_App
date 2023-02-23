@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="Failed suite [Shoal App Smoke test]" guice-stage="DEVELOPMENT">
+  <test thread-count="5" name="Basic Flows(failed)(failed)">
+    <classes>
+      <class name="Tests.Smoke">
+        <methods>
+          <include name="resetPin"/>
+          <include name="deposit"/>
+          <include name="signUp"/>
+        </methods>
+      </class> <!-- Tests.Smoke -->
+    </classes>
+  </test> <!-- Basic Flows(failed)(failed) -->
+</suite> <!-- Failed suite [Shoal App Smoke test] -->
