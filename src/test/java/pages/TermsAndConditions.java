@@ -33,34 +33,27 @@ public class TermsAndConditions {
 
 	@FindBy (xpath = "//android.view.View[@content-desc=\"Accept\"]")
 	private WebElement btnAccept;
-	
 
-	
-	
-
+	@FindBy(xpath = "//android.view.View[@content-desc=\"By clicking accept you are agreeing to these Terms and Conditions.\"]")
+	private WebElement finalText;
 
 	public void acceptTermsAndConditions() throws InterruptedException {
 		ProfileConfirmation pf = new ProfileConfirmation(MainListeners.getDriver());
 		WebElement letsGo = pf.getBtnLetsGo();
-		
+
 		btnAccept.click();
 		Thread.sleep(5000);
 		System.out.println("Let's Go button displayed: "+letsGo.isDisplayed()); 
 		Common.screenshot("Landed on Confirmation screen.");
-		
-		
+
 	}
 
 	public void swipeUp() throws InterruptedException {
 
 		WebElement source = driver.findElements(By.className("android.widget.ImageView")).get(0);
-//		WebElement target = driver.findElements(By.className("android.widget.ImageView")).get(0);
 		Rectangle sourceElementRect = source.getRect();
-//		Rectangle targetElementRect = target.getRect();
 		int centerX = sourceElementRect.x+(sourceElementRect.width/2);
-//		double startY = sourceElementRect.y+(sourceElementRect.height*0.9);
 
-		
 		PointerInput finger = new PointerInput(PointerInput.Kind.TOUCH, "finger");
 		Sequence dragNDrop = new Sequence(finger, 1);
 		dragNDrop.addAction(finger.createPointerMove(Duration.ofMillis(0),
@@ -70,22 +63,8 @@ public class TermsAndConditions {
 				PointerInput.Origin.viewport(),centerX, 100));
 		dragNDrop.addAction(finger.createPointerUp(PointerInput.MouseButton.LEFT.asArg()));
 		driver.perform(Arrays.asList(dragNDrop));
-		
-		
+
 	}
-	
-	public boolean clickable() {
-		System.out.println(btnAccept.isEnabled());
-		String clickable = btnAccept.getAttribute("checkable");
-		System.out.println(clickable);
-		if(clickable.toLowerCase().equals("true")) {
-			return true;
-		}
-		
-		return false;
-		
-	}
-	
-	
+
 
 }

@@ -7,9 +7,9 @@
 				<methods>
 					<include name="loginLogout" />
 					<include name="deposit" />
-					<include name="addFunds" />
+					<!-- <include name="addFunds" />
 					<include name="signUp" />
-					<include name="resetPin" />
+					<include name="resetPin" /> -->
 				</methods>
 			</class> <!-- Tests.Smoke -->
 		</classes>

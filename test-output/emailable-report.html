@@ -8,19 +8,23 @@
 <body>
 <table>
 <tr><th>Test</th><th># Passed</th><th># Skipped</th><th># Retried</th><th># Failed</th><th>Time (ms)</th><th>Included Groups</th><th>Excluded Groups</th></tr>
-<tr><th colspan="8">Shoal App Smoke test</th></tr>
-<tr><td><a href="#t0">Basic Flows(failed)</a></td><td class="num">2</td><td class="num">0</td><td class="num">0</td><td class="num attn">3</td><td class="num">299,268</td><td></td><td></td></tr>
+<tr><th colspan="8">Default suite</th></tr>
+<tr><td><a href="#t0">Default test</a></td><td class="num">0</td><td class="num">0</td><td class="num">0</td><td class="num attn">1</td><td class="num">54,941</td><td></td><td></td></tr>
 </table>
-<table id='summary'><thead><tr><th>Class</th><th>Method</th><th>Start</th><th>Time (ms)</th></tr></thead><tbody><tr><th colspan="4">Shoal App Smoke test</th></tr></tbody><tbody id="t0"><tr><th colspan="4">Basic Flows(failed) &#8212; failed</th></tr><tr class="failedeven"><td rowspan="3">Tests.Smoke</td><td><a href="#m0">deposit</a></td><td rowspan="1">1676759849870</td><td rowspan="1">68640</td></tr><tr class="failedeven"><td><a href="#m1">resetPin</a></td><td rowspan="1">1676759805746</td><td rowspan="1">42410</td></tr><tr class="failedeven"><td><a href="#m2">signUp</a></td><td rowspan="1">1676759719011</td><td rowspan="1">83277</td></tr><tr><th colspan="4">Basic Flows(failed) &#8212; passed</th></tr><tr class="passedeven"><td rowspan="2">Tests.Smoke</td><td><a href="#m3">addFunds</a></td><td rowspan="1">1676759679728</td><td rowspan="1">39278</td></tr><tr class="passedeven"><td><a href="#m4">loginLogout</a></td><td rowspan="1">1676759633928</td><td rowspan="1">45784</td></tr></tbody>
+<table id='summary'><thead><tr><th>Class</th><th>Method</th><th>Start</th><th>Time (ms)</th></tr></thead><tbody><tr><th colspan="4">Default suite</th></tr></tbody><tbody id="t0"><tr><th colspan="4">Default test &#8212; failed</th></tr><tr class="failedeven"><td rowspan="1">Tests.Smoke</td><td><a href="#m0">signUp</a></td><td rowspan="1">1677184123200</td><td rowspan="1">40485</td></tr></tbody>
 </table>
-<h2>Basic Flows(failed)</h2><h3 id="m0">Tests.Smoke#deposit</h3><table class="result"><tr><th>Exception</th></tr><tr><td><div class="stacktrace">org.openqa.selenium.NoSuchElementException: An element could not be located on the page using the given search parameters.
+<h2>Default test</h2><h3 id="m0">Tests.Smoke#signUp</h3><table class="result"><tr><th>Exception</th></tr><tr><td><div class="stacktrace">org.openqa.selenium.NoSuchElementException: An element could not be located on the page using the given search parameters.
 For documentation on this error, please visit: https://selenium.dev/exceptions/#no_such_element
 Build info: version: &apos;4.8.1&apos;, revision: &apos;8ebccac989&apos;
 System info: os.name: &apos;Windows 11&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;11.0.17&apos;
 Driver info: io.appium.java_client.android.AndroidDriver
-Command: [dba06f7a-99c3-4c56-8329-c99075f26e88, findElement {using=xpath, value=//android.view.View[@content-desc=&quot;Save&quot;]}]
+Command: [4ecfaeec-ba63-4f03-9920-6a8115efa6ff, findElement {using=xpath, value=//android.view.View[@content-desc=&quot;Sign up&quot;]}]
 Capabilities {appium:appActivity: uk.co.joinshoal.MainActivity, appium:appPackage: uk.co.joinshoal.qa, appium:databaseEnabled: false, appium:desired: {appActivity: uk.co.joinshoal.MainActivity, appPackage: uk.co.joinshoal.qa, deviceName: RZCT902Y9JR, noReset: true, platformName: android, platformVersion: 12.0, udid: RZCT902Y9JR}, appium:deviceApiLevel: 33, appium:deviceManufacturer: samsung, appium:deviceModel: SM-E236B, appium:deviceName: RZCT902Y9JR, appium:deviceScreenDensity: 450, appium:deviceScreenSize: 1080x2408, appium:deviceUDID: RZCT902Y9JR, appium:javascriptEnabled: true, appium:locationContextEnabled: false, appium:networkConnectionEnabled: true, appium:noReset: true, appium:pixelRatio: 2.8125, appium:platformVersion: 13, appium:statBarHeight: 70, appium:takesScreenshot: true, appium:udid: RZCT902Y9JR, appium:viewportRect: {height: 2133, left: 0, top: 70, width: 1080}, appium:warnings: {}, appium:webStorageEnabled: false, platformName: ANDROID}
-Session ID: dba06f7a-99c3-4c56-8329-c99075f26e88
+Session ID: 4ecfaeec-ba63-4f03-9920-6a8115efa6ff
+	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:490)
 	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:200)
 	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:133)
 	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:53)
@@ -34,51 +38,36 @@ Session ID: dba06f7a-99c3-4c56-8329-c99075f26e88
 	at org.openqa.selenium.support.pagefactory.DefaultElementLocator.findElement(DefaultElementLocator.java:70)
 	at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:39)
 	at com.sun.proxy.$Proxy16.click(Unknown Source)
-	at pages.Deposit.makeDeposit(Deposit.java:57)
-	at Tests.Smoke.deposit(Smoke.java:139)
+	at pages.Welcome.clickSignUp(Welcome.java:59)
+	at Tests.Smoke.signUp(Smoke.java:62)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+	at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:139)
+	at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:677)
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:221)
+	at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:50)
+	at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:969)
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:194)
+	at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:148)
+	at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:128)
 	at java.base/java.util.ArrayList.forEach(ArrayList.java:1541)
-... Removed 31 stack frames</div></td></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
-<h3 id="m1">Tests.Smoke#resetPin</h3><table class="result"><tr><th>Exception</th></tr><tr><td><div class="stacktrace">org.openqa.selenium.StaleElementReferenceException: The element &apos;By.xpath: //android.view.View[@content-desc=&quot;Login&quot;]&apos; is not linked to the same object in DOM anymore
-For documentation on this error, please visit: https://selenium.dev/exceptions/#stale_element_reference
-Build info: version: &apos;4.8.1&apos;, revision: &apos;8ebccac989&apos;
-System info: os.name: &apos;Windows 11&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;11.0.17&apos;
-Driver info: io.appium.java_client.android.AndroidDriver
-Command: [dba06f7a-99c3-4c56-8329-c99075f26e88, clickElement {id=00000000-0000-0356-0000-027000000004}]
-Capabilities {appium:appActivity: uk.co.joinshoal.MainActivity, appium:appPackage: uk.co.joinshoal.qa, appium:databaseEnabled: false, appium:desired: {appActivity: uk.co.joinshoal.MainActivity, appPackage: uk.co.joinshoal.qa, deviceName: RZCT902Y9JR, noReset: true, platformName: android, platformVersion: 12.0, udid: RZCT902Y9JR}, appium:deviceApiLevel: 33, appium:deviceManufacturer: samsung, appium:deviceModel: SM-E236B, appium:deviceName: RZCT902Y9JR, appium:deviceScreenDensity: 450, appium:deviceScreenSize: 1080x2408, appium:deviceUDID: RZCT902Y9JR, appium:javascriptEnabled: true, appium:locationContextEnabled: false, appium:networkConnectionEnabled: true, appium:noReset: true, appium:pixelRatio: 2.8125, appium:platformVersion: 13, appium:statBarHeight: 70, appium:takesScreenshot: true, appium:udid: RZCT902Y9JR, appium:viewportRect: {height: 2133, left: 0, top: 70, width: 1080}, appium:warnings: {}, appium:webStorageEnabled: false, platformName: ANDROID}
-Element: [[AndroidDriver:  on ANDROID (dba06f7a-99c3-4c56-8329-c99075f26e88)] -&gt; xpath: //android.view.View[@content-desc=&quot;Login&quot;]]
-Session ID: dba06f7a-99c3-4c56-8329-c99075f26e88
-	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:200)
-	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:133)
-	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:53)
-	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:184)
-	at io.appium.java_client.remote.AppiumCommandExecutor.execute(AppiumCommandExecutor.java:262)
-	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:543)
-	at org.openqa.selenium.remote.RemoteWebElement.execute(RemoteWebElement.java:257)
-	at org.openqa.selenium.remote.RemoteWebElement.click(RemoteWebElement.java:78)
-	at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:52)
-	at com.sun.proxy.$Proxy16.click(Unknown Source)
-	at Tests.Smoke.resetPin(Smoke.java:161)
-	at java.base/java.util.ArrayList.forEach(ArrayList.java:1541)
-... Removed 34 stack frames</div></td></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
-<h3 id="m2">Tests.Smoke#signUp</h3><table class="result"><tr><th>Exception</th></tr><tr><td><div class="stacktrace">org.openqa.selenium.InvalidElementStateException: Unable to perform W3C actions. Check the logcat output for possible error reports and make sure your input actions chain is valid.
-Build info: version: &apos;4.8.1&apos;, revision: &apos;8ebccac989&apos;
-System info: os.name: &apos;Windows 11&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;11.0.17&apos;
-Driver info: io.appium.java_client.android.AndroidDriver
-Command: [dba06f7a-99c3-4c56-8329-c99075f26e88, actions {actions=[org.openqa.selenium.interactions.Sequence@77d0dbba]}]
-Capabilities {appium:appActivity: uk.co.joinshoal.MainActivity, appium:appPackage: uk.co.joinshoal.qa, appium:databaseEnabled: false, appium:desired: {appActivity: uk.co.joinshoal.MainActivity, appPackage: uk.co.joinshoal.qa, deviceName: RZCT902Y9JR, noReset: true, platformName: android, platformVersion: 12.0, udid: RZCT902Y9JR}, appium:deviceApiLevel: 33, appium:deviceManufacturer: samsung, appium:deviceModel: SM-E236B, appium:deviceName: RZCT902Y9JR, appium:deviceScreenDensity: 450, appium:deviceScreenSize: 1080x2408, appium:deviceUDID: RZCT902Y9JR, appium:javascriptEnabled: true, appium:locationContextEnabled: false, appium:networkConnectionEnabled: true, appium:noReset: true, appium:pixelRatio: 2.8125, appium:platformVersion: 13, appium:statBarHeight: 70, appium:takesScreenshot: true, appium:udid: RZCT902Y9JR, appium:viewportRect: {height: 2133, left: 0, top: 70, width: 1080}, appium:warnings: {}, appium:webStorageEnabled: false, platformName: ANDROID}
-Session ID: dba06f7a-99c3-4c56-8329-c99075f26e88
-	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:200)
-	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:133)
-	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:53)
-	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:184)
-	at io.appium.java_client.remote.AppiumCommandExecutor.execute(AppiumCommandExecutor.java:262)
-	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:543)
-	at org.openqa.selenium.remote.RemoteWebDriver.perform(RemoteWebDriver.java:611)
-	at pages.TermsAndConditions.swipeUp(TermsAndConditions.java:72)
-	at Tests.Smoke.signUp(Smoke.java:89)
-	at java.base/java.util.ArrayList.forEach(ArrayList.java:1541)
-... Removed 31 stack frames</div></td></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
-<h3 id="m3">Tests.Smoke#addFunds</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
-<h3 id="m4">Tests.Smoke#loginLogout</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+	at org.testng.TestRunner.privateRun(TestRunner.java:829)
+	at org.testng.TestRunner.run(TestRunner.java:602)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:437)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:431)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:391)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:330)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1256)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1176)
+	at org.testng.TestNG.runSuites(TestNG.java:1099)
+	at org.testng.TestNG.run(TestNG.java:1067)
+	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
+</div></td></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
 </body>
 </html>

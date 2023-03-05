@@ -5,7 +5,7 @@
     <classes>
       <class name="Tests.Smoke">
         <methods>
-          <include name="resetPin"/>
+          <include name="signUp"/>
         </methods>
       </class> <!-- Tests.Smoke -->
     </classes>

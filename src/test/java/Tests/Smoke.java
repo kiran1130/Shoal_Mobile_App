@@ -28,37 +28,55 @@ import pages.Welcome;
 
 @Listeners(Tests.MainListeners.class)
 public class Smoke {
+	private static Login pf;
+	private static Welcome pfWelcomePage;
+	private static Logout pfLogout;
+	private static Name pfNamePage;
+	private static MobileNumber pfMobNumberPage;
+	private static OTP pfOTP;
+	private static Email pfEmailPage;
+	private static SecurityPIN pfSecurityPIN;
+	private static Biometrics pfBiometricsPage;
+	private static Notifications pfNotifications;
+	private static TermsAndConditions pfTnCPage;
+	private static ProfileConfirmation pfProfileConfirm ;
+	private static ShoalUserWelcome pfShoalWelcome;
+	private static Login pfLogin;
+	private static Home pfhome;
+	private static Deposit pfDeposit;
+	private static ResetPinSmsVerification pfResetPinSms;
+	private static ResetPinEmailVerification pfResetPinEmail;
+	private static ResetPin pfResetPin;
+	private static SetNewPin pfSetNewPin;
+	private static ResetPinConfirm pfResetPinConfirm;
 
 	@Test
 	public static void loginLogout() {
-		Login pf = new Login(MainListeners.getDriver());
-		Logout pfLogout = new Logout(MainListeners.getDriver());
-		OTP pfOTP = new OTP(MainListeners.getDriver());
+		pf = new Login(MainListeners.getDriver());
+		pfWelcomePage = new Welcome(MainListeners.getDriver());
+		pfLogout = new Logout(MainListeners.getDriver());
 
-		pf.login();
-
-		//Entering Security PIN - 123456 (Default)
-		pfOTP.enterOTP();
-
-		pfLogout.logout();
+		pfWelcomePage.clickLoginLnk();
+		pf.login(); //Login as existing user
+		pfLogout.logout(); //Logout as existing user
 	}
 
 	@Test
 	public static void signUp() throws InterruptedException {
-		Welcome pfWelcomePage = new Welcome(MainListeners.getDriver());
-		Name pfNamePage = new Name(MainListeners.getDriver());
-		MobileNumber pfMobNumberPage = new MobileNumber(MainListeners.getDriver());
-		OTP pfOTP = new OTP(MainListeners.getDriver());
-		Email pfEmailPage = new Email(MainListeners.getDriver());
-		SecurityPIN pfSecurityPIN = new SecurityPIN(MainListeners.getDriver());
-		Biometrics pfBiometricsPage = new Biometrics(MainListeners.getDriver());
-		Notifications pfNotifications = new Notifications(MainListeners.getDriver());
-		TermsAndConditions pfTnCPage= new TermsAndConditions(MainListeners.getDriver());
-		ProfileConfirmation pfProfileConfirm = new ProfileConfirmation(MainListeners.getDriver());
-		ShoalUserWelcome pfShoalWelcome = new ShoalUserWelcome(MainListeners.getDriver());
-		Logout pfLogout = new Logout(MainListeners.getDriver());
+		pfWelcomePage = new Welcome(MainListeners.getDriver());
+		pfNamePage = new Name(MainListeners.getDriver());
+		pfMobNumberPage = new MobileNumber(MainListeners.getDriver());
+		pfOTP = new OTP(MainListeners.getDriver());
+		pfEmailPage = new Email(MainListeners.getDriver());
+		pfSecurityPIN = new SecurityPIN(MainListeners.getDriver());
+		pfBiometricsPage = new Biometrics(MainListeners.getDriver());
+		pfNotifications = new Notifications(MainListeners.getDriver());
+		pfTnCPage= new TermsAndConditions(MainListeners.getDriver());
+		pfProfileConfirm = new ProfileConfirmation(MainListeners.getDriver());
+		pfShoalWelcome = new ShoalUserWelcome(MainListeners.getDriver());
+		pfLogout = new Logout(MainListeners.getDriver());
 
-
+		//Tap on Sign Up link
 		pfWelcomePage.clickSignUp();
 
 		//Entering Name of the user.
@@ -66,9 +84,8 @@ public class Smoke {
 		pfNamePage.tapOnContinue();
 
 		//Entering Mobile number and OTP
-//		pfMobNumberPage.validateHeaderText();
-		String mobNum = Helper.generateMobileNumber();
-		pfMobNumberPage.enterMobNumber("7"+mobNum);
+		String mobNumber = Helper.generateMobileNumber();
+		pfMobNumberPage.enterMobNumber("7"+mobNumber);
 		pfOTP.enterOTP();
 
 		//Entering Email and OTP
@@ -83,9 +100,11 @@ public class Smoke {
 		pfBiometricsPage.doItLater();
 
 		//Declining the Notification request
-		pfNotifications.enableNotifications();
+		pfNotifications.doItLater();
+		
+		
+		//Swipe Up the Terms and Conditions screen
 		for(int i=0; i<20; i++) {
-
 			pfTnCPage.swipeUp();
 			Thread.sleep(300);
 		}
@@ -105,11 +124,11 @@ public class Smoke {
 	}
 
 	@Test
-	public void addFunds() throws InterruptedException {
-		Login pfLogin = new Login(MainListeners.getDriver());
-		Home pfhome = new Home(MainListeners.getDriver());
-		Logout pfLogout = new Logout(MainListeners.getDriver());
-		OTP pfOTP = new OTP(MainListeners.getDriver());
+	public static void addFunds() throws InterruptedException {
+		pfLogin = new Login(MainListeners.getDriver());
+		pfhome = new Home(MainListeners.getDriver());
+		pfLogout = new Logout(MainListeners.getDriver());
+		pfOTP = new OTP(MainListeners.getDriver());
 
 		//Logging In
 		pfLogin.login();
@@ -128,11 +147,11 @@ public class Smoke {
 	}
 
 	@Test
-	public void deposit() throws InterruptedException {
-		Login pfLogin = new Login(MainListeners.getDriver());
-		Deposit pfDeposit = new Deposit(MainListeners.getDriver());
-		Logout pfLogout = new Logout(MainListeners.getDriver());
-		OTP pfOTP = new OTP(MainListeners.getDriver());
+	public static void deposit() throws InterruptedException {
+		pfLogin = new Login(MainListeners.getDriver());
+		pfDeposit = new Deposit(MainListeners.getDriver());
+		pfLogout = new Logout(MainListeners.getDriver());
+		pfOTP = new OTP(MainListeners.getDriver());
 
 		pfLogin.login();
 		pfOTP.enterOTP();
@@ -142,24 +161,24 @@ public class Smoke {
 	}
 
 	@Test
-	public void resetPin() {
-		Welcome pfWelcome = new Welcome(MainListeners.getDriver());
-		SecurityPIN pfSecurityPin = new SecurityPIN(MainListeners.getDriver());
-		ResetPinSmsVerification pfResetPinSms = new ResetPinSmsVerification(MainListeners.getDriver());
-		ResetPinEmailVerification pfResetPinEmail = new ResetPinEmailVerification(MainListeners.getDriver());
-		Login pfLogin = new Login(MainListeners.getDriver());
-		ResetPin pfResetPin = new ResetPin(MainListeners.getDriver());
-		SetNewPin pfSetNewPin = new SetNewPin(MainListeners.getDriver());
-		Logout pfLogout = new Logout(MainListeners.getDriver());
-		ResetPinConfirm pfResetPinConfirm = new ResetPinConfirm(MainListeners.getDriver());
+	public static void resetPin() {
+		pfWelcomePage = new Welcome(MainListeners.getDriver());
+		pfSecurityPIN = new SecurityPIN(MainListeners.getDriver());
+		pfResetPinSms = new ResetPinSmsVerification(MainListeners.getDriver());
+		pfResetPinEmail = new ResetPinEmailVerification(MainListeners.getDriver());
+		pfLogin = new Login(MainListeners.getDriver());
+		pfResetPin = new ResetPin(MainListeners.getDriver());
+		pfSetNewPin = new SetNewPin(MainListeners.getDriver());
+		pfLogout = new Logout(MainListeners.getDriver());
+		pfResetPinConfirm = new ResetPinConfirm(MainListeners.getDriver());
 
-		pfWelcome.clickLoginLnk();
+		pfWelcomePage.clickLoginLnk();
 		WebElement txtNumber = pfLogin.getTxtMobileNumber();
 		txtNumber.click();
 		txtNumber.sendKeys("7150008457");
 		WebElement btnLogin = pfLogin.getBtnLogin();
 		btnLogin.click();
-		pfSecurityPin.getLnkResetPin().click();
+		pfSecurityPIN.getLnkResetPin().click();
 		pfResetPin.clickLetsGo();
 		pfResetPinSms.enterOTP();
 		pfResetPinEmail.enterOTP();

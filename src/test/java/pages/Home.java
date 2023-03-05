@@ -15,19 +15,26 @@ public class Home {
 
 		PageFactory.initElements(driver, this);
 	}
-	
+
 	@FindBy (xpath = "//android.view.View[@content-desc=\"Add funds\"]")
 	private WebElement btnAddFunds;
-	
+
 	@FindBy (xpath = "//android.view.View[@content-desc=\"Withdraw\"]")
 	private WebElement btnWithdraw;
-	
+
 	@FindBy (xpath = "//android.view.View[@content-desc=\"Save\"]")
 	private WebElement btnSave;
-	
+
 	@FindBy (xpath = "//android.widget.Button[@content-desc=\"Add £1000\"]")
 	private WebElement lnkFund;
-	
+
+	@FindBy (xpath = "//android.view.View[@content-desc=\"Got it\"]")
+	private WebElement btnGotIt;
+
+
+	public WebElement getBtnGotIt() {
+		return btnGotIt;
+	}
 
 	public WebElement getBtnAddFunds() {
 		return btnAddFunds;
@@ -41,13 +48,14 @@ public class Home {
 		return btnSave;
 	}
 
+
+
 	public void addFunds() throws InterruptedException {
-		
 		btnAddFunds.click();
 		lnkFund.click();
 		Thread.sleep(6000);
 		Common.screenshot("Fund Added");
-		
+
 	}
 
 }

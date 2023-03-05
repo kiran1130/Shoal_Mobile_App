@@ -31,6 +31,7 @@ public class MainListeners implements ITestListener {
 	static ExtentReports extentReport;
 	static ExtentSparkReporter spark;
 	static ExtentTest extentTest;
+	
 
 	private static AppiumDriver driver;
 //	private static ITestResult result;
@@ -59,7 +60,9 @@ public class MainListeners implements ITestListener {
 	}
 
 	public void onStart(ITestContext res) {
-		spark = new ExtentSparkReporter("./test-output/Spark Reports/spark"+System.currentTimeMillis()+".html");
+		
+		
+		spark = new ExtentSparkReporter("./test-output/Spark Reports/ShoalSparkReport"+System.currentTimeMillis()+".html");
 		extentReport = new ExtentReports();
 		extentReport.attachReporter(spark);
 
@@ -81,22 +84,24 @@ public class MainListeners implements ITestListener {
 		
 
 		DesiredCapabilities caps = new DesiredCapabilities();
-		caps.setCapability("deviceName",prop.getProperty("qdeviceName") );
-		caps.setCapability("udid", prop.getProperty("qudid"));
-		caps.setCapability("platformName", prop.getProperty("qplatformName"));
-		caps.setCapability("platformVersion", prop.getProperty("qplatformVersion"));
-		caps.setCapability("appPackage", prop.getProperty("qappPackage"));
-		caps.setCapability("appActivity", prop.getProperty("qappActivity"));
-		caps.setCapability("automationName", prop.getProperty("qautomationName"));
-		caps.setCapability("appium:AuthToken", prop.getProperty("qAuthToken"));
-		caps.setCapability("appium:SessionName", prop.getProperty("qSessionName"));
+		caps.setCapability("deviceName",prop.getProperty("deviceName") );
+		caps.setCapability("udid", prop.getProperty("udid"));
+		caps.setCapability("platformName", prop.getProperty("platformName"));
+		caps.setCapability("platformVersion", prop.getProperty("platformVersion"));
+		caps.setCapability("appPackage", prop.getProperty("appPackage"));
+		caps.setCapability("appActivity", prop.getProperty("appActivity"));
+//		caps.setCapability("automationName", prop.getProperty("automationName"));
+//		caps.setCapability("appium:AuthToken", prop.getProperty("AuthToken"));
+//		caps.setCapability("appium:SessionName", prop.getProperty("SessionName"));
+//		caps.setCapability("app", prop.getProperty("app"));
 		caps.setCapability("noReset", prop.getProperty("noReset"));
-  
-		
+	
 		long elementTimeout = Long.parseLong(prop.getProperty("elementTimeout"));
 
 		try {
-			driver = new AndroidDriver(new URL(prop.getProperty("qurl")), caps);
+			URL remoteUrl = new URL(prop.getProperty("url"));
+	        
+			driver = new AndroidDriver(remoteUrl, caps);
 			
 			
 			driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(elementTimeout));

@@ -62,6 +62,14 @@ public class Common {
 		return element;
 		
 	}
+	
+	public static void enterPIN() {
+		for(int i=1;i<7;i++) {
+			MainListeners.getDriver().findElement(By.xpath("//android.view.View[@content-desc=\""+i+"\"]")).click();
+		}
+		
+		Common.screenshot("PIN has been entered successfully.");
+	}
 
 
 
